@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEGAL CHATBOT</title>
+    <style>
+        body 
+        {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        form 
+        {
+            margin-top: 100px;
+        }
+        
+        #question 
+        {
+            width: 750px; /* Adjust the width as needed */
+            height: 30px; /* Adjust the height as needed */
+            padding: 10px; /* Add padding for better appearance */
+        }
+    </style>
+</head>
+<body>
+    <h1>LEGAL CHATBOT</h1>
+    <form action="/ask" method="post">
+        <label for="question">Enter Your Question:</label>
+        <br>
+        <textarea id="question" name="question" required></textarea>
+        <br>
+        <button type="submit">ASK</button>
+    </form>
+    {% if user_question %}
+        <p>Your Question: {{ user_question }}</p>
+    {% endif %}
+    {% if response %}
+        <p>Legal Advice: {{ response }}</p>
+    {% endif %}
+</body>
+</html>
